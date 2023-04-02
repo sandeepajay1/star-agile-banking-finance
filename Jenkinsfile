@@ -55,7 +55,7 @@ node {
         sh "${dockerCMD} push sandeepajay1/finance-me:${tagName}"
         }
     }
-    //Test to webhook
+    //Test to webhook trigger
    // stage('deploy the application'){
         
      //   ansiblePlaybook become: true, credentialsId: 'ansiblekey', disableHostKeyChecking: true, installation: 'MyAnsible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml'
