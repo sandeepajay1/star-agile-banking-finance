@@ -23,7 +23,7 @@ node {
             currentBuild.result = "FAILURE"
             emailext body: '''Hello Sandeep
             The Build Number ${BUILD_NUMBER} is Failed. Please look into that.
-            Thanks,''', subject: 'The jenkis Job ${JOB_NAME} is Failed ', to: 'sandeep.ajayakumar@gmail.com'
+            Thanks,''', subject: 'The jenkins Job ${JOB_NAME} is Failed ', to: 'sandeep.ajayakumar@gmail.com'
         }
     }
     stage('Build the application'){
@@ -44,7 +44,7 @@ node {
             currentBuild.result = "FAILURE"
             emailext body: '''Hello Sandeep
             The Build Number ${BUILD_NUMBER} is Failed. Please look into that.
-            Thanks,''', subject: 'The jenkis Job ${JOB_NAME} is Failed ', to: 'sandeep.ajayakumar@gmail.com'
+            Thanks,''', subject: 'The jenkins Job ${JOB_NAME} is Failed ', to: 'sandeep.ajayakumar@gmail.com'
             
         }
     }
@@ -56,8 +56,8 @@ node {
         sh "${dockerCMD} push niladrimondaldcr/finance-me:${tagName}"
         }
     }
-    stage('deploy the application'){
+   // stage('deploy the application'){
         
-        ansiblePlaybook become: true, credentialsId: 'ansiblekey', disableHostKeyChecking: true, installation: 'MyAnsible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml'
-    }
+     //   ansiblePlaybook become: true, credentialsId: 'ansiblekey', disableHostKeyChecking: true, installation: 'MyAnsible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml'
+    //}
 }
