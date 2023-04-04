@@ -1,0 +1,10 @@
+node {
+    
+    stage('git checkout'){
+        git 'https://github.com/sandeepajay1/star-agile-banking-finance.git'
+    }
+    
+    stage('ansible_deployment to test server'){
+       ansiblePlaybook become: true, credentialsId: 'deploy', disableHostKeyChecking: true, installation: 'ANSIBLE', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml'
+    }
+}
